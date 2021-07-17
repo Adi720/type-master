@@ -18,7 +18,7 @@ const Nav = () => {
                     href="https://github.com/Adi720"
                     rel="noreferrer"
                 >
-                    Adi720
+                    ↔
                 </a>
             </div>
         </div>
