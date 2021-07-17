@@ -1,10 +1,12 @@
 import React from "react";
+import Nav from "../Nav/Nav";
 import "./App.css";
 
 function App() {
     return (
-        <div>
-            <h1>App</h1>
+        <div className="app">
+            {/* Nav Bar */}
+            <Nav />
         </div>
 
     )
