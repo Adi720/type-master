@@ -1,5 +1,6 @@
 import React from "react";
 import { ChallengeDetailsCard } from "../ChallengeDetailsCard/ChallengeDetailsCard";
+import TypeMaster from "../TypeMaster/TypeMaster";
 import "./TypingChallengeContainer.css";
 
 const TypingChallengeContainer = ({ words, characters, wpm }) => {
@@ -17,7 +18,7 @@ const TypingChallengeContainer = ({ words, characters, wpm }) => {
 
             {/* Real Challenge Container */}
             <div className="typemaster-container">
-                <p>This is the real Challenge</p>
+                <TypeMaster selectedParagraph="Hello Worlld" />
             </div>
         </div>
     )
