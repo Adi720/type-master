@@ -2,7 +2,7 @@ import React from "react";
 import TestLetter from "../TestLetter/TestLetter";
 import "./TypeMaster.css";
 
-const TypeMaster = ({ selectedParagraph, timeRemaining, timerStarted, testInfo }) => {
+const TypeMaster = ({ timeRemaining, timerStarted, testInfo, onInputChange }) => {
     console.log(testInfo);
     return (
         <div className="typemaster">
@@ -21,9 +21,12 @@ const TypeMaster = ({ selectedParagraph, timeRemaining, timerStarted, testInfo }
                     <div className="textarea text-para">
                         {/* {selectedParagraph} */}
                         {
-                            testInfo.map((discreteLetterInfo) => {
+                            testInfo.map((discreteLetterInfo, index) => {
                                 return (
-                                    <TestLetter disceteLetterInfo={discreteLetterInfo} />
+                                    <TestLetter
+                                        key={index}
+                                        disceteLetterInfo={discreteLetterInfo}
+                                    />
                                 )
                             })
                         }
@@ -31,7 +34,9 @@ const TypeMaster = ({ selectedParagraph, timeRemaining, timerStarted, testInfo }
                 </div>
 
                 <div className="textarea-right">
-                    <textarea className="textarea" placeholder="Type here to begin test">
+                    <textarea
+                        onChange={(e) => onInputChange(e.target.value)}
+                        className="textarea" placeholder="Type here to begin test">
 
                     </textarea>
                 </div>

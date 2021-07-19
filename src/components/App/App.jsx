@@ -34,8 +34,27 @@ class App extends React.Component {
                 status: "notAttempted",
             };
         });
-        this.setState({ testInfo })
+        this.setState({ testInfo });
     }
+
+    startTimer = () => {
+        this.setState({ timerStarted: true })
+        const timer = setInterval(() => {
+            if (this.state.timeRemaining > 0) {
+                this.setState({
+                    timeRemaining: this.state.timeRemaining - 1,
+                })
+            }
+            else {
+                clearInterval(timer);
+            }
+
+        }, 1000)
+    }
+
+    handleUserInput = (inputValue) => {
+        if (!this.state.timerStarted) this.startTimer();
+    };
 
     render() {
         console.log(this.state.testInfo);
@@ -54,6 +73,7 @@ class App extends React.Component {
                     timeRemaining={this.state.timeRemaining}
                     timerStarted={this.state.timerStarted}
                     testInfo={this.state.testInfo}
+                    onInputChange={this.handleUserInput}
                 />
             </div>
 
