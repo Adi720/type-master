@@ -3,7 +3,14 @@ import { ChallengeDetailsCard } from "../ChallengeDetailsCard/ChallengeDetailsCa
 import TypeMaster from "../TypeMaster/TypeMaster";
 import "./TypingChallengeContainer.css";
 
-const TypingChallengeContainer = ({ words, characters, wpm }) => {
+const TypingChallengeContainer = ({
+    selectedParagraph,
+    words,
+    characters,
+    wpm,
+    timeRemaining,
+    timerStarted
+}) => {
     return (
         <div className="typing-challenge-container">
             {/* Details Section */}
@@ -18,7 +25,11 @@ const TypingChallengeContainer = ({ words, characters, wpm }) => {
 
             {/* Real Challenge Container */}
             <div className="typemaster-container">
-                <TypeMaster selectedParagraph="Hello Worlld" />
+                <TypeMaster
+                    timeRemaining={timeRemaining}
+                    timerStarted={timerStarted}
+                    selectedParagraph={selectedParagraph}
+                />
             </div>
         </div>
     )

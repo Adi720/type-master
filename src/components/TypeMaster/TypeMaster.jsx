@@ -1,12 +1,17 @@
 import React from "react";
 import "./TypeMaster.css";
 
-const TypeMaster = ({ selectedParagraph }) => {
+const TypeMaster = ({ selectedParagraph, timeRemaining, timerStarted }) => {
     return (
         <div className="typemaster">
             <div className="timer-container">
-                <p className="timer">00:60</p>
-                <p className="timer-info">Start typing to begin the test</p>
+                <p className="timer">
+                    00:
+                    {timeRemaining > 10 ? timeRemaining : `0${timeRemaining}`}
+                </p>
+                <p className="timer-info">
+                    {!timerStarted && "Start typing to begin the test"}
+                </p>
             </div>
 
             <div className="textarea-container">
