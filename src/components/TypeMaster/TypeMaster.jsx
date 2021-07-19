@@ -1,4 +1,5 @@
 import React from "react";
+import TestLetter from "../TestLetter/TestLetter";
 import "./TypeMaster.css";
 
 const TypeMaster = ({ selectedParagraph, timeRemaining, timerStarted, testInfo }) => {
@@ -18,7 +19,14 @@ const TypeMaster = ({ selectedParagraph, timeRemaining, timerStarted, testInfo }
             <div className="textarea-container">
                 <div className="textarea-left">
                     <div className="textarea text-para">
-                        {selectedParagraph}
+                        {/* {selectedParagraph} */}
+                        {
+                            testInfo.map((discreteLetterInfo) => {
+                                return (
+                                    <TestLetter disceteLetterInfo={discreteLetterInfo} />
+                                )
+                            })
+                        }
                     </div>
                 </div>
 
