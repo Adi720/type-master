@@ -19,7 +19,7 @@ const Landing = () => {
                 </div>
             </div>
             <div className="landing-right">
-                <img data-aos="fade-left" data-aos-easing="ease-in-sine" data-aos-offset="500" className="landing-image" src={keyboard} alt="keyboard" />
+                <img draggable="false" data-aos="fade-left" data-aos-easing="ease-in-sine" data-aos-offset="500" className="landing-image" src={keyboard} alt="keyboard" />
             </div>
         </div>
     )

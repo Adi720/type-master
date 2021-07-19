@@ -36,7 +36,7 @@ const TypeMaster = ({ timeRemaining, timerStarted, testInfo, onInputChange }) =>
                 <div className="textarea-right">
                     <textarea
                         onChange={(e) => onInputChange(e.target.value)}
-                        className="textarea" placeholder="Type here to begin test">
+                        className="textarea" placeholder="Type here to begin test" spellCheck="false">
 
                     </textarea>
                 </div>

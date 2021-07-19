@@ -6,7 +6,7 @@ const Nav = () => {
     return (
         <div className="nav-container">
             <div className="nav-left">
-                <img className="logo" src={logo} alt="logo" />
+                <img draggable="false" className="logo" src={logo} alt="logo" />
                 <p className="logo-text">
                     TypeMaster
                 </p>
