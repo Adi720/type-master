@@ -9,7 +9,8 @@ const TestContainer = ({
     characters,
     wpm,
     timeRemaining,
-    timerStarted
+    timerStarted,
+    testInfo,
 }) => {
 
     return (
@@ -24,6 +25,7 @@ const TestContainer = ({
                             timeRemaining={timeRemaining}
                             timerStarted={timerStarted}
                             selectedParagraph={selectedParagraph}
+                            testInfo={testInfo}
                         />
                     </div>
                 ) : (

@@ -1,7 +1,8 @@
 import React from "react";
 import "./TypeMaster.css";
 
-const TypeMaster = ({ selectedParagraph, timeRemaining, timerStarted }) => {
+const TypeMaster = ({ selectedParagraph, timeRemaining, timerStarted, testInfo }) => {
+    console.log(testInfo);
     return (
         <div className="typemaster">
             <div className="timer-container">

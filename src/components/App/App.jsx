@@ -5,6 +5,7 @@ import Nav from "../Nav/Nav";
 import "./App.css";
 
 const TotalTime = 60;
+const apiUrl = "http://metaphorpsum.com/paragraphs/1/9"
 
 class App extends React.Component {
 
@@ -15,9 +16,29 @@ class App extends React.Component {
         words: 0,
         characters: 0,
         wpm: 0,
+        testInfo: []
+    };
+
+    componentDidMount() {
+        // fetch(apiUrl)
+        //     .then(response => response.text())
+        //     .then(data => {
+        //         this.setState({ selectedParagraph: data })
+        //     })
+
+        const selectedParaArray = this.state.selectedParagraph.split("");
+
+        const testInfo = selectedParaArray.map(selectedLetter => {
+            return {
+                testLetter: selectedLetter,
+                status: "notAttempted",
+            };
+        });
+        this.setState({ testInfo })
     }
 
     render() {
+        console.log(this.state.testInfo);
         return (
             <div className="app">
                 {/* Nav Bar */}
@@ -32,6 +53,7 @@ class App extends React.Component {
                     wpm={this.state.wpm}
                     timeRemaining={this.state.timeRemaining}
                     timerStarted={this.state.timerStarted}
+                    testInfo={this.state.testInfo}
                 />
             </div>
 
